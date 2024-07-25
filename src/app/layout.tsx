@@ -1,7 +1,9 @@
 import "@/styles/globals.css";
 
-import { GeistSans } from "geist/font/sans";
+import { Nunito } from "next/font/google";
+import { Roboto } from "next/font/google";
 import { type Metadata } from "next";
+import { cn } from "@/lib/utils";
 
 export const metadata: Metadata = {
   title: "Create T3 App",
@@ -9,11 +11,29 @@ export const metadata: Metadata = {
   icons: [{ rel: "icon", url: "/favicon.ico" }],
 };
 
+const fontNunito = Nunito({
+  subsets: ["latin"],
+  variable: "--font-nunito",
+});
+
+const fontRoboto = Roboto({
+  subsets: ["latin"],
+  variable: "--font-roboto",
+  weight: ["100", "300", "400", "500", "700", "900"],
+});
+
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${GeistSans.variable}`}>
+    <html
+      lang="en"
+      className={cn(
+        "bg-background font-primary min-h-screen antialiased",
+        fontNunito.variable,
+        fontRoboto.variable,
+      )}
+    >
       <body>{children}</body>
     </html>
   );
