@@ -1,5 +1,5 @@
 import CircleParagraph from "@/components/circle-paragraph";
-import Logo from "@/components/logo";
+import Logo from "@/components/logo/logo";
 import { Vortex } from "@/components/ui/vortex";
 import { FaArrowDown } from "react-icons/fa6";
 
