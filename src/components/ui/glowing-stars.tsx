@@ -62,7 +62,9 @@ export const GlowingStarsTitle = ({
   );
 };
 
-export const Illustration = ({ mouseEnter }: { mouseEnter: boolean }) => {
+export const Illustration = ({ mouseEnter }: { mouseEnter?: boolean }) => {
+  const [shouldGlow, setShouldGlow] = useState(mouseEnter ?? false);
+
   const stars = 108;
   const columns = 18;
 
@@ -98,12 +100,14 @@ export const Illustration = ({ mouseEnter }: { mouseEnter: boolean }) => {
           <div
             key={`matrix-col-${starIdx}}`}
             className="relative flex items-center justify-center"
+            onMouseEnter={() => mouseEnter ?? setShouldGlow(true)}
+            onMouseLeave={() => mouseEnter ?? setShouldGlow(false)}
           >
             <Star
-              isGlowing={mouseEnter ? true : isGlowing}
-              delay={mouseEnter ? staticDelay : delay}
+              isGlowing={shouldGlow ? true : isGlowing}
+              delay={shouldGlow ? staticDelay : delay}
             />
-            {mouseEnter && <Glow delay={staticDelay} />}
+            {shouldGlow && <Glow delay={staticDelay} />}
             <AnimatePresence mode="wait">
               {isGlowing && <Glow delay={delay} />}
             </AnimatePresence>

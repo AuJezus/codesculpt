@@ -38,7 +38,7 @@ export default function RootLayout({
     <html
       lang="en"
       className={cn(
-        "bg-background font-primary dark h-[400vh] min-h-screen antialiased",
+        "bg-background font-primary dark min-h-screen antialiased",
         fontNunito.variable,
         fontRoboto.variable,
       )}

@@ -1,10 +1,12 @@
 "use client";
+
 import { useEffect, useRef, useState } from "react";
 import { Color, Scene, Fog, PerspectiveCamera, Vector3 } from "three";
 import ThreeGlobe from "three-globe";
 import { useThree, Object3DNode, Canvas, extend } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
 import countries from "@/lib/globe.json";
+
 declare module "@react-three/fiber" {
   interface ThreeElements {
     threeGlobe: Object3DNode<ThreeGlobe, typeof ThreeGlobe>;
@@ -60,7 +62,7 @@ interface WorldProps {
 
 let numbersOfRings = [0];
 
-export function Globe({ globeConfig, data }: WorldProps) {
+export const Globe = ({ globeConfig, data }: WorldProps) => {
   const [globeData, setGlobeData] = useState<
     | {
         size: number;
@@ -118,20 +120,20 @@ export function Globe({ globeConfig, data }: WorldProps) {
     let points = [];
     for (let i = 0; i < arcs.length; i++) {
       const arc = arcs[i];
-      const rgb = hexToRgb(arc.color) as { r: number; g: number; b: number };
+      const rgb = hexToRgb(arc!.color) as { r: number; g: number; b: number };
       points.push({
         size: defaultProps.pointSize,
-        order: arc.order,
+        order: arc!.order,
         color: (t: number) => `rgba(${rgb.r}, ${rgb.g}, ${rgb.b}, ${1 - t})`,
-        lat: arc.startLat,
-        lng: arc.startLng,
+        lat: arc!.startLat,
+        lng: arc!.startLng,
       });
       points.push({
         size: defaultProps.pointSize,
-        order: arc.order,
+        order: arc!.order,
         color: (t: number) => `rgba(${rgb.r}, ${rgb.g}, ${rgb.b}, ${1 - t})`,
-        lat: arc.endLat,
-        lng: arc.endLng,
+        lat: arc!.endLat,
+        lng: arc!.endLng,
       });
     }
 
@@ -178,7 +180,7 @@ export function Globe({ globeConfig, data }: WorldProps) {
         return (e as { arcAlt: number }).arcAlt * 1;
       })
       .arcStroke((e) => {
-        return [0.32, 0.28, 0.3][Math.round(Math.random() * 2)];
+        return [0.32, 0.28, 0.3][Math.round(Math.random() * 2)] ?? null;
       })
       .arcDashLength(defaultProps.arcLength)
       .arcDashInitialGap((e) => (e as { order: number }).order * 1)
@@ -228,7 +230,7 @@ export function Globe({ globeConfig, data }: WorldProps) {
       <threeGlobe ref={globeRef} />
     </>
   );
-}
+};
 
 export function WebGLRendererConfig() {
   const { gl, size } = useThree();
@@ -287,9 +289,9 @@ export function hexToRgb(hex: string) {
   var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
   return result
     ? {
-        r: parseInt(result[1], 16),
-        g: parseInt(result[2], 16),
-        b: parseInt(result[3], 16),
+        r: parseInt(result[1]!, 16),
+        g: parseInt(result[2]!, 16),
+        b: parseInt(result[3]!, 16),
       }
     : null;
 }
