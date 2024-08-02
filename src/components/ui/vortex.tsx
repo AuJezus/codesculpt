@@ -1,4 +1,3 @@
-// @ts-nocheck
 "use client";
 
 import { cn } from "@/lib/utils";
@@ -192,10 +191,10 @@ export const Vortex = (props: VortexProps) => {
     canvas: HTMLCanvasElement,
     ctx?: CanvasRenderingContext2D,
   ) => {
-    const { clientWidth, clientHeight } = document.body;
+    const { innerWidth, innerHeight } = window;
 
-    canvas.width = clientWidth;
-    canvas.height = clientHeight;
+    canvas.width = innerWidth;
+    canvas.height = innerHeight;
 
     center[0] = 0.5 * canvas.width;
     center[1] = 0.5 * canvas.height;
