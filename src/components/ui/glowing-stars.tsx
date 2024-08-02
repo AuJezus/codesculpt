@@ -22,7 +22,7 @@ export const GlowingStarsBackgroundCard = ({
         setMouseEnter(false);
       }}
       className={cn(
-        "h-full max-h-[20rem] w-full max-w-md rounded-xl border border-[#eaeaea] bg-[linear-gradient(110deg,#333_0.6%,#222)] p-4 dark:border-neutral-600",
+        "h-full max-h-[20rem] w-full max-w-md rounded-xl border border-border bg-background p-4",
         className,
       )}
     >
@@ -42,7 +42,9 @@ export const GlowingStarsDescription = ({
   children?: React.ReactNode;
 }) => {
   return (
-    <p className={cn("max-w-[16rem] text-base text-white", className)}>
+    <p
+      className={cn("max-w-[16rem] text-base text-muted-foreground", className)}
+    >
       {children}
     </p>
   );
@@ -55,11 +57,7 @@ export const GlowingStarsTitle = ({
   className?: string;
   children?: React.ReactNode;
 }) => {
-  return (
-    <h2 className={cn("text-2xl font-bold text-[#eaeaea]", className)}>
-      {children}
-    </h2>
-  );
+  return <h2 className={cn("text-2xl font-bold", className)}>{children}</h2>;
 };
 
 export const Illustration = ({ mouseEnter }: { mouseEnter?: boolean }) => {
@@ -135,7 +133,7 @@ const Star = ({ isGlowing, delay }: { isGlowing: boolean; delay: number }) => {
         delay: delay,
       }}
       className={cn(
-        "bg-muted-foreground relative z-20 h-[1px] w-[1px] rounded-full",
+        "relative z-20 h-[1px] w-[1px] rounded-full bg-muted-foreground",
       )}
     ></motion.div>
   );
@@ -158,7 +156,7 @@ const Glow = ({ delay }: { delay: number }) => {
       exit={{
         opacity: 0,
       }}
-      className="bg-primary shadow-primary absolute left-1/2 z-10 h-[4px] w-[4px] -translate-x-1/2 rounded-full shadow-2xl blur-[1px]"
+      className="absolute left-1/2 z-10 h-[4px] w-[4px] -translate-x-1/2 rounded-full bg-primary shadow-2xl shadow-primary blur-[1px]"
     />
   );
 };

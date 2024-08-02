@@ -48,8 +48,8 @@ export const EvervaultCard = ({
           randomString={randomString}
         />
         <div className="relative z-10 flex items-center justify-center">
-          <div className="text-foreground relative flex items-center justify-center rounded-full p-2 px-4 text-xl font-bold">
-            <div className="bg-background absolute h-full w-full rounded-full blur-sm" />
+          <div className="relative flex items-center justify-center rounded-full p-2 px-4 text-xl font-bold text-foreground">
+            <div className="absolute h-full w-full rounded-full bg-background blur-sm" />
             <span className="z-20">{children}</span>
           </div>
         </div>
@@ -66,14 +66,14 @@ export function CardPattern({ mouseX, mouseY, randomString }: any) {
     <div className="pointer-events-none">
       <div className="absolute inset-0 [mask-image:linear-gradient(white,transparent)] group-hover/card:opacity-50"></div>
       <motion.div
-        className="from-primary absolute inset-0 bg-gradient-to-r to-blue-700 opacity-0 backdrop-blur-xl transition duration-500 group-hover/card:opacity-100"
+        className="absolute inset-0 bg-gradient-to-r from-primary to-blue-700 opacity-0 backdrop-blur-xl transition duration-500 group-hover/card:opacity-100"
         style={style}
       />
       <motion.div
         className="absolute inset-0 opacity-0 mix-blend-overlay group-hover/card:opacity-100"
         style={style}
       >
-        <p className="absolute inset-x-0 h-full whitespace-pre-wrap break-words font-mono text-xs font-bold text-white transition duration-500">
+        <p className="absolute inset-x-0 h-full whitespace-pre-wrap break-words font-mono text-xs font-bold text-primary-foreground transition duration-500">
           {randomString}
         </p>
       </motion.div>

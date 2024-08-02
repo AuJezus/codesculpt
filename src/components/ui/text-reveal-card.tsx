@@ -67,7 +67,7 @@ export const TextRevealCard = ({
       onTouchMove={touchMoveHandler}
       ref={cardRef}
       className={cn(
-        "border-border bg-background relative w-[40rem] overflow-hidden rounded-lg border p-8",
+        "relative w-[40rem] overflow-hidden rounded-lg border border-border bg-background p-8",
         className,
       )}
     >
@@ -89,13 +89,13 @@ export const TextRevealCard = ({
                 }
           }
           transition={isMouseOver ? { duration: 0 } : { duration: 0.4 }}
-          className="bg-background absolute z-20 will-change-transform"
+          className="absolute z-20 bg-background will-change-transform"
         >
           <p
             style={{
               textShadow: "4px 4px 15px rgba(0,0,0,0.5)",
             }}
-            className="bg-gradient-to-b from-white to-neutral-300 bg-clip-text py-10 text-base font-bold text-transparent text-white sm:text-[3rem]"
+            className="bg-gradient-to-b from-white to-neutral-300 bg-clip-text py-10 text-base font-bold text-foreground sm:text-[3rem]"
           >
             {revealText}
           </p>
@@ -107,7 +107,7 @@ export const TextRevealCard = ({
             opacity: widthPercentage > 0 ? 1 : 0,
           }}
           transition={isMouseOver ? { duration: 0 } : { duration: 0.4 }}
-          className="via-primary absolute z-50 h-40 w-[8px] bg-gradient-to-b from-transparent to-transparent will-change-transform"
+          className="absolute z-50 h-40 w-[8px] bg-gradient-to-b from-transparent via-primary to-transparent will-change-transform"
         ></motion.div>
 
         <div className="overflow-hidden [mask-image:linear-gradient(to_bottom,transparent,white,transparent)]">
@@ -128,11 +128,7 @@ export const TextRevealCardTitle = ({
   children: React.ReactNode;
   className?: string;
 }) => {
-  return (
-    <h2 className={twMerge("mb-2 text-lg text-white", className)}>
-      {children}
-    </h2>
-  );
+  return <h2 className={twMerge("mb-2 text-lg", className)}>{children}</h2>;
 };
 
 export const TextRevealCardDescription = ({
@@ -143,7 +139,9 @@ export const TextRevealCardDescription = ({
   className?: string;
 }) => {
   return (
-    <p className={twMerge("text-sm text-[#a9a9a9]", className)}>{children}</p>
+    <p className={twMerge("text-sm text-muted-foreground", className)}>
+      {children}
+    </p>
   );
 };
 
