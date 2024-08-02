@@ -1,6 +1,8 @@
 "use client";
 
 import dynamic from "next/dynamic";
+import Heading from "../heading";
+import { Section, SectionParagraph } from "./section";
 
 const World = dynamic(
   () => import("@/components/ui/globe").then((m) => m.World),
@@ -11,27 +13,22 @@ const World = dynamic(
 
 function PresenceSection() {
   return (
-    <section
-      id="benefits"
-      className="relative z-0 mx-auto mb-44 max-w-[1200px] overflow-hidden"
-    >
-      <h2 className="font-secondary mb-4 text-center text-6xl font-semibold">
-        Let your idea be known
-      </h2>
-      <p className="text-muted-foreground mx-auto mb-12 max-w-5xl text-center text-lg">
+    <Section id="benefits" className="relative z-0 overflow-hidden">
+      <Heading as="h2">Let your idea be known</Heading>
+      <SectionParagraph>
         Ready to be the star of the web? With CodeSculpt&apos;s SEO and online
-        presence magic, we’ll boost your site to the top of search results and
-        draw in the crowds. From snazzy keywords to irresistible content, we
+        presence magic, we&apos;ll boost your site to the top of search results
+        and draw in the crowds. From snazzy keywords to irresistible content, we
         make sure your big idea gets all the attention it deserves.
-      </p>
+      </SectionParagraph>
 
       <div className="pointer-events-none h-[700px]">
-        <div className="to-background inset-0 z-10 h-full w-full bg-gradient-to-b from-transparent to-[99%]"></div>
+        <div className="inset-0 z-10 h-full w-full bg-gradient-to-b from-transparent to-background to-[99%]"></div>
         <div className="absolute left-1/2 top-24 -z-10 aspect-square h-full -translate-x-1/2">
           <World data={arcs} globeConfig={globeConfig} />
         </div>
       </div>
-    </section>
+    </Section>
   );
 }
 

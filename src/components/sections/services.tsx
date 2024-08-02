@@ -11,24 +11,24 @@ import { BentoGrid, BentoGridItem } from "../ui/bento-grid";
 import { EvervaultCard } from "../ui/evervault-card";
 import { Illustration } from "../ui/glowing-stars";
 import WebpageSkeleton from "../skeletons/webpage";
+import Heading from "../heading";
+import { Section, SectionParagraph } from "./section";
 
 function ServicesSection() {
   return (
-    <section id="services" className="mx-auto mb-44 max-w-[1200px]">
-      <h2 className="font-secondary mb-4 text-center text-6xl font-semibold">
-        We take care of everything
-      </h2>
-      <p className="text-muted-foreground mx-auto mb-12 max-w-5xl text-center text-lg">
+    <Section id="services">
+      <Heading as="h2">We take care of everything</Heading>
+      <SectionParagraph>
         Need anything web-related? We&apos;ve got you covered! Our services and
         expertise can fulfill your every business need. From custom web design
         to responsive development, and from e-commerce solutions to SEO
         optimization, we ensure your online presence is powerful and effective.
-      </p>
+      </SectionParagraph>
 
       <BentoGrid>
         <BentoGridItem
           header={
-            <div className="text-muted-foreground bg-dot-white/15 group relative flex h-full flex-col items-center justify-center">
+            <div className="group relative flex h-full flex-col items-center justify-center text-muted-foreground bg-dot-white/15">
               <BiCart className="text-7xl transition-all group-hover:rotate-[12deg]" />
 
               <BiSushi className="absolute left-1/2 top-1/2 scale-0 text-2xl opacity-0 transition-all group-hover:translate-x-10 group-hover:translate-y-12 group-hover:rotate-[-32deg] group-hover:scale-100 group-hover:opacity-100" />
@@ -49,7 +49,7 @@ function ServicesSection() {
             <div className="group relative h-full font-mono">
               <EvervaultCard>
                 <span className="text-rose-700">{"<div> "}</span>
-                <span className="text-muted-foreground group-hover:text-foreground transition-colors">
+                <span className="text-muted-foreground transition-colors group-hover:text-foreground">
                   Hello world!
                 </span>
                 <span className="text-rose-700">{" </div>"}</span>
@@ -77,7 +77,7 @@ function ServicesSection() {
           description="Have an idea for an uncommon feature or a system? That's the thing that excites us."
         />
       </BentoGrid>
-    </section>
+    </Section>
   );
 }
 

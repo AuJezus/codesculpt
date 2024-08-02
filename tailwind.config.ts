@@ -1,11 +1,8 @@
 import type { Config } from "tailwindcss";
 import { fontFamily } from "tailwindcss/defaultTheme";
 import svgToDataUri from "mini-svg-data-uri";
-const plugin = require("tailwindcss/plugin");
-
-const {
-  default: flattenColorPalette,
-} = require("tailwindcss/lib/util/flattenColorPalette");
+import plugin from "tailwindcss/plugin";
+import flattenColorPalette from "tailwindcss/lib/util/flattenColorPalette";
 
 const config = {
   darkMode: ["class"],
@@ -92,7 +89,8 @@ const config = {
   },
   plugins: [
     require("tailwindcss-animate"),
-    function addVariablesForColors({ matchUtilities, theme }) {
+    require("@designbycode/tailwindcss-text-stroke"),
+    plugin(({ matchUtilities, theme }) =>
       matchUtilities(
         {
           "bg-grid": (value: string) => ({
@@ -115,8 +113,8 @@ const config = {
           values: flattenColorPalette(theme("colors")),
           type: "color",
         },
-      );
-    },
+      ),
+    ),
   ],
 } satisfies Config;
 

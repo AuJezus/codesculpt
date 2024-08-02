@@ -67,10 +67,3 @@
     @apply bg-background text-foreground;
   }
 }
-
-@layer utilities {
-  .text-stroke {
-    -webkit-text-stroke: 4px;
-    -webkit-text-stroke-color: white;
-  }
-}
