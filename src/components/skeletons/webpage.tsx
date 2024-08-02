@@ -7,7 +7,7 @@ function WebpageSkeleton() {
     <motion.div
       initial="initial"
       whileHover="animate"
-      className="bg-grid-white/15 h-full w-full overflow-hidden"
+      className="group h-full w-full overflow-hidden bg-grid-white/15"
     >
       <motion.div
         variants={{
@@ -21,7 +21,7 @@ function WebpageSkeleton() {
             },
           },
         }}
-        className="border-muted-foreground bg-background group mx-auto h-52 w-1/2 space-y-2 rounded-md border p-2"
+        className="mx-auto h-52 w-1/2 space-y-2 rounded-md border border-muted-foreground bg-background p-2"
       >
         <div className="flex justify-between border-inherit">
           <div className="h-4 w-1/3 rounded-md border border-inherit" />
