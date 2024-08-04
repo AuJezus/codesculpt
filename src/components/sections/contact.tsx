@@ -33,7 +33,7 @@ function ContactSection() {
 
           <div className="flex flex-col gap-4 text-lg text-muted-foreground">
             <p className="flex items-center gap-2">
-              <BiEnvelope /> augustasv16@gmail.com
+              <BiEnvelope /> info@codesculpt.org
             </p>
 
             <p className="flex items-center gap-2">
