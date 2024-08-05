@@ -12,7 +12,7 @@ function ContactSection() {
       <BackgroundBeams />
       <Section
         id="contact"
-        className="relative mb-0 grid grid-cols-1 gap-x-16 md:grid-cols-2 lg:p-12 xl:p-12"
+        className="relative mb-0 grid grid-cols-1 gap-x-16 py-4 md:grid-cols-2 lg:p-12 xl:p-12"
       >
         <div className="order-1">
           <Heading as="h2" className="text-left">
@@ -26,14 +26,15 @@ function ContactSection() {
           </SectionParagraph>
         </div>
 
-        <div className="text-[450px]">
-          <LogoName />
-        </div>
+        <LogoName className="order-3 mx-auto h-full w-full pb-8 sm:w-2/3 md:mx-0 md:w-full md:pb-0 lg:w-[450px]" />
 
-        <div className="flex flex-col gap-4 text-lg text-muted-foreground">
-          <p className="flex items-center gap-2">
-            <BiEnvelope /> augustasv16@gmail.com
-          </p>
+        <div className="order-4 flex flex-wrap gap-x-6 gap-y-4 text-lg text-muted-foreground sm:justify-around md:flex-col md:justify-end md:gap-4">
+          <a
+            href="mailto:info@codesculpt.org"
+            className="flex items-center gap-2"
+          >
+            <BiEnvelope /> info@codesculpt.org
+          </a>
 
           <p className="flex items-center gap-2">
             <BiMap /> Vilnius, Lithuania
