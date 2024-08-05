@@ -1,4 +1,4 @@
-export default function Logo() {
+export default function Logo(props: React.HTMLAttributes<SVGElement>) {
   return (
     <svg
       version="1.1"
@@ -10,6 +10,7 @@ export default function Logo() {
       xmlSpace="preserve"
       fill="currentColor"
       width="1em"
+      {...props}
     >
       <polygon points="0,64.8 34.4,83.4 42.4,4.4 " />
       <polygon points="38.2,83.4 46.2,2.6 96.2,58.2 " />
