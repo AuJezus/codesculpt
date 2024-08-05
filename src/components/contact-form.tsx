@@ -21,7 +21,7 @@ import { useFormState } from "react-dom";
 import { cn } from "@/lib/utils";
 import { FaRegPaperPlane } from "react-icons/fa6";
 
-function ContactForm() {
+function ContactForm({ className }: { className?: string }) {
   const formRef = useRef<HTMLFormElement>(null);
   const [state, formAction] = useFormState(handleEmailMessageNotification, {});
   const [isPending, setIsPending] = useState(false);
@@ -55,7 +55,7 @@ function ContactForm() {
   }, [state, setIsPending]);
 
   return (
-    <div className="relative">
+    <div className={cn("relative", className)}>
       <div
         className={cn(
           "pointer-events-none absolute inset-0 flex flex-col items-center justify-center opacity-0 transition-opacity duration-700",
