@@ -66,7 +66,10 @@ function HeroSection() {
         </Heading>
 
         <div className="flex w-full max-w-[950px] flex-col-reverse items-center justify-between gap-10 sm:gap-14 md:flex-row md:gap-20 lg:gap-[125px]">
-          <a className="group relative flex h-[120px] w-[120px] flex-shrink-0 items-center justify-center rounded-full border-4 border-primary bg-primary transition-transform hover:scale-110 md:h-[140px] md:w-[140px]">
+          <a
+            href="#contact"
+            className="group relative flex h-[120px] w-[120px] flex-shrink-0 items-center justify-center rounded-full border-4 border-primary bg-primary transition-transform hover:scale-110 md:h-[140px] md:w-[140px]"
+          >
             <CircleParagraph className="absolute inset-0 h-full w-full animate-[spin_25s_linear_infinite] font-bold uppercase text-primary-foreground md:text-lg">
               Contact Us Contact Us
             </CircleParagraph>
