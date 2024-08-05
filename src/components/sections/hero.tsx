@@ -1,10 +1,10 @@
 import { FaArrowDown } from "react-icons/fa6";
 import Logo from "../logo/logo";
-import { Vortex } from "../ui/vortex";
 import Heading from "../heading";
 import { Section } from "./section";
 import { forwardRef } from "react";
 import { cn } from "@/lib/utils";
+import HeroVortex from "../hero-vortex";
 
 const CircleParagraph = forwardRef(
   (
@@ -44,13 +44,7 @@ CircleParagraph.displayName = "CircleParagraph";
 
 function HeroSection() {
   return (
-    <Vortex
-      backgroundColor="transparent"
-      rangeY={400}
-      particleCount={100}
-      baseHue={220}
-      containerClassName="overflow-x-hidden overflow-y-visible"
-    >
+    <HeroVortex>
       <Section
         id="top"
         className="relative z-0 mb-12 flex min-h-screen flex-col items-center justify-center gap-10 sm:gap-14 md:gap-24"
@@ -62,7 +56,7 @@ function HeroSection() {
           <span className="gap-2 sm:flex lg:gap-6">
             Code that <Logo className="hidden sm:block" />
           </span>
-          <span className="lg:text-stroke-[4px] md:text-stroke-[3px] text-stroke-[1px] text-stroke-foreground text-transparent sm:self-end">
+          <span className="text-transparent text-stroke-[1px] text-stroke-foreground sm:self-end md:text-stroke-[3px] lg:text-stroke-[4px]">
             sculpts your
           </span>
           <span>online success</span>
@@ -90,7 +84,7 @@ function HeroSection() {
           </p>
         </div>
       </Section>
-    </Vortex>
+    </HeroVortex>
   );
 }
 
