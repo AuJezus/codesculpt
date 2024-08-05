@@ -7,7 +7,10 @@ export const Section = forwardRef<
 >(({ children, className, ...props }, ref) => (
   <section
     ref={ref}
-    className={cn("mx-auto mb-36 max-w-[1200px]", className)}
+    className={cn(
+      "mx-auto mb-36 max-w-[1200px] px-2 sm:px-3 xl:px-0",
+      className,
+    )}
     {...props}
   >
     {children}
@@ -23,7 +26,7 @@ export const SectionParagraph = forwardRef<
     <p
       ref={ref}
       className={cn(
-        "mx-auto mb-12 max-w-5xl text-center text-lg text-muted-foreground",
+        "mx-auto mb-12 max-w-5xl text-center text-sm text-muted-foreground sm:text-base md:text-lg",
         className,
       )}
       {...props}

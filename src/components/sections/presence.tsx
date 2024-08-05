@@ -22,9 +22,9 @@ function PresenceSection() {
         make sure your big idea gets all the attention it deserves.
       </SectionParagraph>
 
-      <div className="pointer-events-none h-[700px]">
-        <div className="inset-0 z-10 h-full w-full bg-gradient-to-b from-transparent to-background to-[99%]"></div>
-        <div className="absolute left-1/2 top-24 -z-10 aspect-square h-full -translate-x-1/2">
+      <div className="pointer-events-none relative aspect-square w-full md:static md:h-[700px]">
+        <div className="absolute left-1/2 top-1/2 z-10 h-full w-screen -translate-x-1/2 -translate-y-1/2 bg-gradient-to-b from-transparent from-[30%] to-background"></div>
+        <div className="absolute bottom-[15%] left-1/2 -z-10 aspect-square h-full -translate-x-1/2 md:top-24">
           <World data={arcs} globeConfig={globeConfig} />
         </div>
       </div>

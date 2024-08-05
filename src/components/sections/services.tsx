@@ -28,15 +28,15 @@ function ServicesSection() {
       <BentoGrid>
         <BentoGridItem
           header={
-            <div className="group relative flex h-full flex-col items-center justify-center text-muted-foreground bg-dot-white/15">
+            <div className="group relative flex h-full w-full flex-col items-center justify-center text-muted-foreground bg-dot-white/15">
               <BiCart className="text-7xl transition-all group-hover:rotate-[12deg]" />
 
-              <BiSushi className="absolute left-1/2 top-1/2 scale-0 text-2xl opacity-0 transition-all group-hover:translate-x-10 group-hover:translate-y-12 group-hover:rotate-[-32deg] group-hover:scale-100 group-hover:opacity-100" />
-              <BiCoffee className="absolute left-1/2 top-1/2 scale-0 text-2xl opacity-0 transition-all group-hover:-translate-x-32 group-hover:translate-y-16 group-hover:rotate-[22deg] group-hover:scale-100 group-hover:opacity-100" />
-              <BiCheese className="absolute left-1/2 top-1/2 scale-0 text-2xl opacity-0 transition-all group-hover:-translate-x-44 group-hover:-translate-y-14 group-hover:rotate-[-27deg] group-hover:scale-100 group-hover:opacity-100" />
-              <BiCreditCard className="absolute left-1/2 top-1/2 scale-0 text-2xl opacity-0 transition-all group-hover:-translate-y-20 group-hover:translate-x-24 group-hover:rotate-[16deg] group-hover:scale-100 group-hover:opacity-100" />
-              <BiSpa className="absolute left-1/2 top-1/2 scale-0 text-2xl opacity-0 transition-all group-hover:-translate-y-2 group-hover:translate-x-32 group-hover:rotate-[-29deg] group-hover:scale-100 group-hover:opacity-100" />
-              <BiHeadphone className="absolute left-1/2 top-1/2 scale-0 text-2xl opacity-0 transition-all group-hover:-translate-x-16 group-hover:translate-y-2 group-hover:rotate-[37deg] group-hover:scale-100 group-hover:opacity-100" />
+              <BiSushi className="absolute left-1/2 top-1/2 scale-0 text-2xl opacity-0 transition-all group-hover:left-[60%] group-hover:top-[85%] group-hover:rotate-[-32deg] group-hover:scale-100 group-hover:opacity-100" />
+              <BiCoffee className="absolute left-1/2 top-1/2 scale-0 text-2xl opacity-0 transition-all group-hover:left-[12%] group-hover:top-[85%] group-hover:rotate-[22deg] group-hover:scale-100 group-hover:opacity-100" />
+              <BiCheese className="absolute left-1/2 top-1/2 scale-0 text-2xl opacity-0 transition-all group-hover:left-[3%] group-hover:top-[13%] group-hover:rotate-[-27deg] group-hover:scale-100 group-hover:opacity-100" />
+              <BiCreditCard className="absolute left-1/2 top-1/2 scale-0 text-2xl opacity-0 transition-all group-hover:left-[80%] group-hover:top-[5%] group-hover:rotate-[16deg] group-hover:scale-100 group-hover:opacity-100" />
+              <BiSpa className="absolute left-1/2 top-1/2 scale-0 text-2xl opacity-0 transition-all group-hover:left-[87%] group-hover:top-[48%] group-hover:rotate-[-29deg] group-hover:scale-100 group-hover:opacity-100" />
+              <BiHeadphone className="absolute left-1/2 top-1/2 scale-0 text-2xl opacity-0 transition-all group-hover:left-[30%] group-hover:top-[55%] group-hover:rotate-[37deg] group-hover:scale-100 group-hover:opacity-100" />
             </div>
           }
           title="eCommerce"
@@ -44,7 +44,7 @@ function ServicesSection() {
         />
 
         <BentoGridItem
-          className="col-span-2"
+          className="md:col-span-2"
           header={
             <div className="group relative h-full font-mono">
               <EvervaultCard>
@@ -61,7 +61,7 @@ function ServicesSection() {
         />
 
         <BentoGridItem
-          className="col-span-2"
+          className="md:col-span-2"
           header={<WebpageSkeleton />}
           title="UI/UX Design"
           description="Our designs are user-centric, reflecting your brand’s identity while ensuring seamless and engaging interactions."

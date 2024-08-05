@@ -3,8 +3,8 @@ import { cva } from "class-variance-authority";
 import { forwardRef } from "react";
 
 const levels = {
-  1: "text-9xl font-black uppercase",
-  2: "mb-4 text-6xl font-semibold text-center",
+  1: "font-black uppercase text-5xl sm:text-7xl md:text-8xl lg:text-9xl",
+  2: "mb-4 md:text-6xl text-5xl font-semibold text-center",
 };
 
 const headingVariants = cva("font-secondary", {
