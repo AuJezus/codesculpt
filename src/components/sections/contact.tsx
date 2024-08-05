@@ -12,7 +12,7 @@ function ContactSection() {
       <BackgroundBeams className="hidden md:block" />
       <Section
         id="contact"
-        className="relative mb-0 grid grid-cols-1 gap-x-16 py-4 md:grid-cols-2 lg:p-12 xl:p-12"
+        className="relative !mb-0 grid grid-cols-1 gap-x-16 py-4 md:grid-cols-2 lg:p-12 xl:p-12"
       >
         <div className="order-1">
           <Heading as="h2" className="text-left">

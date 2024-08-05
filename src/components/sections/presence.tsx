@@ -13,7 +13,10 @@ const World = dynamic(
 
 function PresenceSection() {
   return (
-    <Section id="benefits" className="relative z-0 overflow-hidden">
+    <Section
+      id="benefits"
+      className="relative z-0 mb-12 overflow-hidden lg:mb-24"
+    >
       <Heading as="h2">Let your idea be known</Heading>
       <SectionParagraph>
         Ready to be the star of the web? With CodeSculpt&apos;s SEO and online

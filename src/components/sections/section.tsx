@@ -8,7 +8,7 @@ export const Section = forwardRef<
   <section
     ref={ref}
     className={cn(
-      "mx-auto mb-36 max-w-[1200px] px-2 sm:px-3 xl:px-0",
+      "mx-auto mb-24 max-w-[1200px] px-2 sm:px-3 lg:mb-36 xl:px-0",
       className,
     )}
     {...props}
