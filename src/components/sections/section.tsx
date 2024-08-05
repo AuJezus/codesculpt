@@ -26,7 +26,7 @@ export const SectionParagraph = forwardRef<
     <p
       ref={ref}
       className={cn(
-        "mx-auto mb-12 max-w-5xl text-center text-lg text-muted-foreground",
+        "mx-auto mb-12 max-w-5xl text-center text-sm text-muted-foreground sm:text-base md:text-lg",
         className,
       )}
       {...props}
