@@ -17,25 +17,21 @@ function BenefitsSection() {
         no-brainer:
       </SectionParagraph>
 
-      <div className="grid auto-rows-[20rem] grid-cols-3 gap-4">
-        <div className="relative col-span-2 h-full w-full overflow-hidden rounded-xl border to-background">
+      <div className="grid auto-rows-[18rem] grid-cols-1 gap-4 md:auto-rows-[20rem] md:grid-cols-3">
+        <div className="relative h-full w-full overflow-hidden rounded-xl border to-background md:col-span-2">
           <div className="relative h-full w-full">
             <TextRevealCard
-              className="mx-auto w-[37rem] border-none"
+              className="mx-auto border-none md:w-[37rem]"
               text="You know the business"
               revealText="We know the code"
             ></TextRevealCard>
           </div>
 
-          <div className="pointer-events-none absolute bottom-5 left-10 right-10 h-[6.26rem]">
-            <h3 className="mb-2 font-secondary text-3xl font-semibold">
-              Expert team
-            </h3>
-            <p className="text-lg text-muted-foreground">
-              Our team of pros is passionate about turning your ideas into
-              reality.
-            </p>
-          </div>
+          <BenefitCardText
+            title="Expert Team"
+            description="Our team of pros is passionate about turning your ideas into
+              reality."
+          />
         </div>
 
         <div className="group relative z-0 h-full w-full overflow-hidden rounded-xl border bg-gradient-to-b from-transparent from-60% to-background">
@@ -53,15 +49,11 @@ function BenefitsSection() {
             </div>
           </div>
 
-          <div className="absolute bottom-5 left-10 right-10 h-[6.26rem]">
-            <h3 className="mb-2 font-secondary text-3xl font-semibold">
-              All in one
-            </h3>
-            <p className="text-lg text-muted-foreground">
-              From design to production, we handle it all so you don&apos;t have
-              to.
-            </p>
-          </div>
+          <BenefitCardText
+            title="All in one"
+            description="From design to production, we handle it all so you don't have
+              to."
+          />
         </div>
 
         <div className="group relative z-0 h-full w-full overflow-hidden rounded-xl border bg-gradient-to-b from-transparent from-60% to-background">
@@ -75,40 +67,49 @@ function BenefitsSection() {
               className="h-full w-full !opacity-0 duration-500 group-hover:!opacity-100"
               particleColor="#FFFFFF"
             />
-            <FaHandHolding className="absolute bottom-12 left-1/2 -translate-x-1/2 text-9xl opacity-0 transition-all duration-500 group-hover:bottom-28 group-hover:opacity-100" />
-            <FaHeart className="absolute bottom-32 left-1/2 -translate-x-1/2 scale-50 text-9xl transition-all duration-500 group-hover:bottom-44 group-hover:scale-100 group-hover:text-red-500" />
+            <FaHandHolding className="absolute left-1/2 top-[80%] -translate-x-1/2 text-9xl opacity-0 transition-all duration-500 group-hover:top-[23%] group-hover:opacity-100" />
+            <FaHeart className="absolute left-1/2 top-[25%] -translate-x-1/2 scale-50 text-9xl transition-all duration-500 group-hover:top-[2%] group-hover:scale-100 group-hover:text-red-500" />
           </div>
 
-          <div className="absolute bottom-5 left-10 right-10 h-[6.26rem]">
-            <h3 className="mb-2 font-secondary text-3xl font-semibold">
-              Long-term Support
-            </h3>
-            <p className="text-lg text-muted-foreground">
-              We provide support after completion to keep your site running like
-              a dream.
-            </p>
-          </div>
+          <BenefitCardText
+            title="Long-term Support"
+            description="We provide support after completion to keep your site running like
+              a dream."
+          />
         </div>
 
-        <div className="group relative col-span-2 h-full w-full overflow-hidden rounded-xl border bg-gradient-to-b from-transparent from-60% to-background">
+        <div className="group relative h-full w-full overflow-hidden rounded-xl border bg-gradient-to-b from-transparent from-60% to-background md:col-span-2">
           <div className="group relative h-full w-full text-muted-foreground">
             <TechSkeletonContainer className="-translate-y-5">
               <TechSkeleton />
             </TechSkeletonContainer>
           </div>
 
-          <div className="absolute bottom-5 left-10 right-10 h-[6.26rem]">
-            <h3 className="mb-2 font-secondary text-3xl font-semibold">
-              Latest Tech
-            </h3>
-            <p className="text-lg text-muted-foreground">
-              Leverage the power of the latest technology to keep your site
-              fast, secure, and ahead of the curve.
-            </p>
-          </div>
+          <BenefitCardText
+            title="Latest Tech"
+            description="Leverage the power of the latest technology to keep your site
+              fast, secure, and ahead of the curve."
+          />
         </div>
       </div>
     </Section>
+  );
+}
+
+function BenefitCardText({
+  title,
+  description,
+}: {
+  title: string;
+  description: string;
+}) {
+  return (
+    <div className="pointer-events-none absolute bottom-0 mx-6 mb-4 lg:h-[6.26rem]">
+      <h3 className="mb-2 font-secondary text-xl font-semibold sm:text-3xl">
+        {title}
+      </h3>
+      <p className="text-muted-foreground lg:text-lg">{description}</p>
+    </div>
   );
 }
 
