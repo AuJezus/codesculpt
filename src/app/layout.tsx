@@ -25,7 +25,7 @@ const fontRoboto = Roboto({
 });
 
 const navItems = [
-  { name: "Home", link: "/", icon: <BiHome /> },
+  { name: "Home", link: "/#top", icon: <BiHome /> },
   { name: "Services", link: "/#services", icon: <BiWrench /> },
   { name: "Benefits", link: "/#benefits", icon: <BiHeart /> },
   { name: "Contact Us", link: "/#contact", icon: <BiEnvelope /> },
@@ -38,7 +38,7 @@ export default function RootLayout({
     <html
       lang="en"
       className={cn(
-        "bg-background font-primary dark min-h-screen antialiased",
+        "dark min-h-screen scroll-p-20 scroll-smooth bg-background font-primary antialiased",
         fontNunito.variable,
         fontRoboto.variable,
       )}

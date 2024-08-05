@@ -51,7 +51,10 @@ function HeroSection() {
       baseHue={220}
       containerClassName="overflow-x-hidden overflow-y-visible"
     >
-      <Section className="relative z-0 mb-12 flex min-h-screen flex-col items-center justify-center gap-10 sm:gap-14 md:gap-24">
+      <Section
+        id="top"
+        className="relative z-0 mb-12 flex min-h-screen flex-col items-center justify-center gap-10 sm:gap-14 md:gap-24"
+      >
         <Heading
           as="h1"
           className="flex w-full max-w-[1200px] flex-col gap-2 text-center sm:text-left md:gap-5"
