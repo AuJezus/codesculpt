@@ -9,7 +9,7 @@ import ContactForm from "../contact-form";
 function ContactSection() {
   return (
     <div className="relative border-t-2 py-4">
-      <BackgroundBeams />
+      <BackgroundBeams className="hidden md:block" />
       <Section
         id="contact"
         className="relative mb-0 grid grid-cols-1 gap-x-16 py-4 md:grid-cols-2 lg:p-12 xl:p-12"
